@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--  <meta name="csrf-token" content="{{ csrf_token() }}"> -->
+    <!-- Title -->
+    <title>Gradient | Dashboard</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+    <!-- Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <!-- CSS Implementing Plugins -->
+    <link rel="stylesheet" href="assets/css/vendor.min.css" />
+    <!-- CSS Space Template -->
+    <link rel="stylesheet" href="assets/css/theme.minc619.css?v=1.0" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- ========== HEADER ========== -->
+    <header id="header">
+      <nav
+        style="background-color: #121e2a; height: 100px"
+        class="navbar navbar-expand-sm"
+      >
+        <div class="container-fluid px-4">
+          <div class="d-flex align-items-center;">
+            <div class="">
+              <a class="navbar-brand" href="#" aria-label="Space">
+                <img
+                  class="navbar-brand-logo"
+                  src="img/logo.svg"
+                  alt="Logo image"
+                />
+              </a>
+            </div>
+
+            <div
+              class="d-none d-md-block"
+              style="
+                margin-left: 5px;
+                padding-left: 10px;
+                border-left: 2px solid #fff;
+              "
+            >
+              <div class="d-flex align-items-start pl-4">
+                <p class="py-2">
+                  <i
+                    style="font-size: 27px; color: #397aeb"
+                    class="fas fa-phone fa-2x d-block"
+                  ></i>
+                </p>
+                <div style="margin-left: -20px" class="d-flex flex-colunm">
+                  <ul style="list-style: none">
+                    <li class="text-white"><strong>07039093894</strong></li>
+                    <li class="text-muted">Personal investment manager</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-default text-white">
+              <i class="bi-list"></i>
+            </span>
+            <span class="navbar-toggler-toggled text-white">
+              <i class="bi-x"></i>
+            </span>
+          </button>
+
+          <div class="float-right">
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+              <div
+                class="d-flex justify-content-around align-items-center pt-3"
+              >
+                <p class="mx-3">
+                  <a
+                    href="http://"
+                    class="btn btn-sm btn-primary px-4 d-flex justify-content-center align-items-center"
+                  >
+                    <i class="fas fa-plus pr-3"></i>&nbsp; &nbsp;
+                    <span class="d-none d-sm-none d-md-block">New asset</span>
+                  </a>
+                </p>
+                <p class="px-3">
+                  <a class="text-secondary" href="#"
+                    ><i class="fas fa-comments fa-2x"></i
+                  ></a>
+                </p>
+                <p class="px-3">
+                  <a class="text-secondary" href="#"
+                    ><i class="fas fa-bell fa-2x"></i
+                  ></a>
+                </p>
+
+                <div class="d-flex justify-content-center align-items-center">
+                  <div class="dropdown">
+                    <div
+                      class="dropdown-toggle"
+                      type="button"
+                      id="dropdownMenuButtonWithIcon"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      <p class="px-3">
+                        <i class="fas fa-user-circle fa-2x"></i>
+                      </p>
+                      <div class="d-none d-sm-none d-md-block">
+                        <strong class="text-white">Username</strong>
+                        <p class="text-muted">title</p>
+                      </div>
+                    </div>
+                    <div
+                      class="dropdown-menu"
+                      aria-labelledby="dropdownMenuButtonWithIcon"
+                    >
+                      <a class="dropdown-item" href="/">
+                        <i class="bi-house dropdown-item-icon"></i> Dashboard
+                      </a>
+                      <a class="dropdown-item" href="/">
+                        <i class="bi-person dropdown-item-icon"></i> Profile
+                      </a>
+                      <a
+                        class="dropdown-item"
+                        href="/"
+                        onclick="event.preventDefault();
+                                            document.getElementById('logout-form').submit();"
+                        style="color: red"
+                      >
+                        <i style="color: red" class="bi bi-power"></i> Logout
+                      </a>
+                      <form
+                        id="logout-form"
+                        action="/"
+                        method="POST"
+                        style="display: none"
+                      >
+                        @csrf
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- ========== END HEADER ========== -->
+
+    <div class="shadow-sm mb-3">
+      <!-- Second dashboard Nav starts here-->
+      <div class="px-4">
+        <div class="d-flex justify-content-between align-items-center">
+          <!--collapse button for the second dashboard navbar. START-->
+          <button
+            class="navbar-toggler d-block d-md-none mr-4"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#dashNavDropdown"
+            aria-controls="dashNavDropdown"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-default text-black">
+              <i class="bi-list"></i>
+            </span>
+            <span class="navbar-toggler-toggled text-black">
+              <i class="bi-x"></i>
+            </span>
+          </button>
+          <!--collapse button for the second dashboard navbar. END-->
+
+          <!-- START of Actual nav content-->
+          <div class="d-none d-sm-none d-md-block">
+            <ul class="nav nav-tabs">
+              <li class="nav-item">
+                <a class="nav-link active" href="#">
+                  <img src="img/dashboard-icon.svg" alt="msg-icon" />
+                  Dashboard
+                </a>
+              </li>
+              <li class="nav-item px-3">
+                <a class="nav-link" href="#">
+                  <img src="img/account-icon.svg" alt="msg-icon" />
+                  Accounts
+                </a>
+              </li>
+              <li class="nav-item px-3">
+                <a class="nav-link" href="#">
+                  <img src="img/messages-icon.svg" alt="msg-icon" />
+                  Messages
+                </a>
+              </li>
+              <li class="nav-item px-3">
+                <a class="nav-link" href="#">
+                  <img src="img/report-icon.svg" alt="report-icon" />
+                  Reports
+                </a>
+              </li>
+              <li class="nav-item pl-4">
+                <a class="nav-link" href="#">
+                  <img src="img/continuation.svg" alt="report-icon" />
+                </a>
+              </li>
+            </ul>
+          </div>
+          <!--End of actual nav content-->
+
+          <!-- start of collapsed content for the actual nav -->
+          <div
+            class="d-md-none nav nav-tabs collapse navbar-collapse"
+            id="dashNavDropdown"
+          >
+            <ul class="list-unstyled">
+              <li class="nav-item">
+                <a class="nav-link active" href="#">
+                  <img src="img/dashboard-icon.svg" alt="msg-icon" />
+                  Dashboard
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <img src="img/account-icon.svg" alt="msg-icon" />
+                  Accounts
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <img src="img/messages-icon.svg" alt="msg-icon" />
+                  Messages
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <img src="img/report-icon.svg" alt="report-icon" />
+                  Reports
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <div class="input-box position-relative">
+                    <input
+                      type="text"
+                      class="form-control rounded-pill"
+                      placeholder="Search"
+                    />
+                    <i
+                      class="fa fa-search position-absolute top-0 end-0 p-3"
+                    ></i>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <!-- start of collapsed content for the actual nav -->
+
+          <!-- Start of search bar -->
+          <div class="dashBoardSearch d-none d-lg-inline">
+            <div class="input-box position-relative">
+              <input
+                type="text"
+                class="form-control rounded-pill"
+                placeholder="Search"
+              />
+              <i class="fa fa-search position-absolute top-0 end-0 p-3"></i>
+            </div>
+          </div>
+          <!-- End 0f search bar -->
+        </div>
+      </div>
+      <!-- End Nav -->
+    </div>
+
+    <main id="content" role="main">
+      <!-- new user pop notification -->
+      <div class="container-fluid px-4">
+        <div
+          class="alert alert-soft-danger alert-dismissible fade show"
+          role="alert"
+        >
+          <div class="d-flex justify-content-around align-items-center">
+            <div class="flex-shrink-0">
+              <i class="bi-exclamation-triangle-fill"></i>
+            </div>
+            <div class="flex-grow-1 ms-2">
+              <span class="fw-bold">Hi Username, </span>
+              To access the full functionality of your gradient app please
+              proceed to kyc verification
+              <a class="btn btn-sm btn-primary" href="kyc.html"
+                >goto KYC form area</a
+              >
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="alert"
+                aria-label="Close"
+              ></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end of pop container -->
+
+      <!-- your main content should start here -->
+      <section id="user-intro">
+        <div class="container-fluid pt-5">
+          <div
+            class="online-status d-flex align-items-center justify-content-start"
+          >
+            <div class="text-center">
+              <a href="">
+                <img class="img-fluid" src="img/Group.svg" alt="online-image" />
+              </a>
+            </div>
+
+            <div class="px-3">
+              <h5 class="text-capitalize fs-5">hi,<strong>john</strong></h5>
+              <p class="d-none d-md-inline small">
+                Here’s your activity today, take a moment to have a look at
+                this.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="container-fluid">
+          <div class="row">
+            <!-- start of portfolio card -->
+            <div class="col-12 col-md-9 py-5">
+              <div class="card rounded">
+                <div class="card-body">
+                  <div
+                    class="card-title d-md-flex justify-content-md-between align-items-center"
+                  >
+                    <div class="portfolio-valBal">
+                      <h3 class="small">Portfolio Value Balance (PVB)</h3>
+                      <h2>N 24,678,080.91</h2>
+                    </div>
+                    <div class="download-report">
+                      <a href="#" class="p-2">
+                        <img src="/img/download.svg" alt="download-icon" />
+                        <span class="text-capitalize px-2"
+                          >download report</span
+                        >
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- end of portfolio card -->
+            <div class="col-12 col-md-3">current balance card</div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer
+      class="border-top border-white-10"
+      style="
+        margin-top: 20rem;
+        margin-bottom: -20px;
+        background-color: #050b13;
+        color: #fff;
+      "
+    >
+      <h6 class="py-4 text-white text-center">&copy; 2022 Gradient</h6>
+    </footer>
+    <!-- ========== END FOOTER ========== -->
+
+    <!-- JS Implementing Plugins -->
+    <script src="assets/js/vendor.min.js"></script>
+
+    <!-- JS Space -->
+    <script src="assets/js/theme.min.js"></script>
+
+    <!-- JS Plugins Init. -->
+    <script>
+      (function () {
+        // INITIALIZATION OF MEGA MENU
+        // =======================================================
+        const megaMenu = new HSMegaMenu(".js-mega-menu", {
+          desktop: {
+            position: "left",
+          },
+        });
+
+        // INITIALIZATION OF SHOW ANIMATIONS
+        // =======================================================
+        new HSShowAnimation(".js-animation-link");
+
+        // INITIALIZATION OF BOOTSTRAP VALIDATION
+        // =======================================================
+        HSBsValidation.init(".js-validate", {
+          onSubmit: (data) => {
+            data.event.preventDefault();
+            alert("Submited");
+          },
+        });
+
+        // INITIALIZATION OF GO TO
+        // =======================================================
+        new HSGoTo(".js-go-to");
+
+        // INITIALIZATION OF NAV SCROLLER
+        // =======================================================
+        new HsNavScroller(".js-nav-scroller");
+
+        // INITIALIZATION OF TEXT ANIMATION (TYPING)
+        // =======================================================
+        const typed = HSCore.components.HSTyped.init(".js-typedjs");
+      })();
+    </script>
+  </body>
+</html>

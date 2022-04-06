@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gradient Dashboard</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="path/to/font-awesome/css/font-awesome.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="d-flex align-items-center .justify-content-md-center">
+        <!--user online status starts here-->
+        <img src="./img/Group.svg" alt="online status" />
+        <div class="p-3 text-start">
+          <h5 class="text-capitalize">hi, john</h5>
+          <p>
+            Here’s your activity today, take a moment to have a look at this.
+          </p>
+        </div>
+      </div>
+      <div class="shadow-sm mb-3">
+        <!-- Nav -->
+        <div class="px-4">
+          <div class="d-flex justify-content-between">
+            <button
+              class="navbar-toggler d-block d-md-none mr-4"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#dashNavDropdown"
+              aria-controls="dashNavDropdown"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-default text-black">
+                <i class="bi-list"></i>
+              </span>
+              <span class="navbar-toggler-toggled text-black">
+                <i class="bi-x"></i>
+              </span>
+            </button>
+            <div class="d-none d-sm-none d-md-block">
+              <ul class="nav nav-tabs">
+                <li class="nav-item">
+                  <a class="nav-link active" href="#">
+                    <img src="img/dash-icon.svg" alt="msg-icon" />
+                    Dashboard
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">
+                    <img src="img/acct-icon.svg" alt="msg-icon" />
+                    Accounts
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">
+                    <img src="img/msg-icon.svg" alt="msg-icon" />
+                    Messages
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">
+                    <img src="img/report-icon.svg" alt="report-icon" />
+                    Reports
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <ul
+              class="nav nav-tabs collapse navbar-collapse"
+              id="dashNavDropdown"
+            >
+              <li class="nav-item">
+                <a class="nav-link active" href="#">
+                  <img src="{{ asset('img/dash-icon.svg" alt="msg-icon" />
+                  Dashboard
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <img src="img/acct-icon.svg" alt="msg-icon" />
+                  Accounts
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <img src="img/msg-icon.svg" alt="msg-icon" />
+                  Messages
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <img src="img/report-icon.svg" alt="report-icon" />
+                  Reports
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- End Nav -->
+      </div>
+      <!--User online status Ends here-->
+      <section class="balance">
+        <!--balance section starts from here-->
+        <div class="row">
+          <div class="col-9">
+            <!--Portfolio-balance card starts here -->
+            <div class="card portfolio-card">
+              <div class="card-body portfolio-card-info">
+                <div
+                  class="container card-title portfolio-card-header d-flex align-items-center justify-content-between"
+                >
+                  <div class="portfolio-valBal">
+                    <h3 class="small">Portfolio Value Balance (PVB)</h3>
+                    <h2>N 24,678,080.91</h2>
+                  </div>
+                  <div class="download-report border">
+                    <a href="#" class="p-2">
+                      <img src="/img/download.svg" alt="download-icon" />
+                      <span class="text-capitalize px-2">download report</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Portfolio card stops here -->
+
+            <!--asset balance card section starts here-->
+            <nav class="mt-5">
+              <div class="nav nav-tabs" id="nav-tabs" role="tablist">
+                <button
+                  class="nav-link active"
+                  id="nav-overview-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#nav-overview"
+                  type="button"
+                  role="tab"
+                  aria-controls="nav-overview"
+                  aria-selected="true"
+                >
+                  Overview
+                </button>
+
+                <button
+                  class="nav-link"
+                  id="nav-assets-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#nav-assets"
+                  type="button"
+                  role="tab"
+                  aria-controls="nav-assets"
+                  aria-selected="true"
+                >
+                  Assets
+                </button>
+
+                <button
+                  class="nav-link"
+                  id="nav-assetOverview-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#nav-assetOverview"
+                  type="button"
+                  role="tab"
+                  aria-controls="nav-assetOverview"
+                  aria-selected="true"
+                >
+                  Assest Overview
+                </button>
+              </div>
+            </nav>
+            <!-- asset balance card section ends here -->
+          </div>
+          <!-- Currency balance card starts here -->
+          <div class="col-3">
+            <div class="card currentBal-card">
+              <div class="card-body currentBal-info">
+                <div class="card-title">cash currency card</div>
+              </div>
+            </div>
+          </div>
+          <!-- Currency balance card ends here -->
+        </div>
+      </section>
+      <!--End of balance section-->
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+      integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+      integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

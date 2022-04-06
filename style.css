@@ -1,0 +1,24 @@
+@media (min-width: 520px) {
+  .download-report {
+    display: block;
+    width: 250px;
+    margin-top: 20px;
+  }
+}
+.portfolio-valBal h2,
+.download-report a span {
+  color: #ff9211;
+}
+
+.download-report {
+  background-color: rgba(143, 255, 222, 0.2);
+  border-radius: 7px;
+  padding: 2px;
+}
+.download-report a {
+  text-decoration: none;
+}
+
+.input-box input {
+  width: 250px;
+}
